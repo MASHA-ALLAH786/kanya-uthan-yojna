@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanya Utthan Yojna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Kanya Utthan Yojna</h1>
+    <p>Empowering women for a better future</p>
+    <div class="container">
+        <button onclick="showForm()">New Application</button>
+        <button onclick="showLogin()">Already Applied</button>
+    </div>
+    
+    <div id="formSection" class="container hidden">
+        <h2>New Application</h2>
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Father's Name" required>
+        <input type="text" placeholder="Mother's Name" required>
+        <input type="date" required>
+        <input type="tel" placeholder="Mobile" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Aadhar Number" required>
+        <input type="text" placeholder="Identification Mark 1" required>
+        <input type="text" placeholder="Identification Mark 2" required>
+        <button onclick="register()">Register</button>
+    </div>
+    
+    <div id="loginSection" class="container hidden">
+        <h2>Login</h2>
+        <input type="text" placeholder="User ID" required>
+        <input type="password" placeholder="Password" required>
+        <button onclick="aprilFool()">Login</button>
+    </div>
+    
+    <script>
+        function showForm() {
+            document.getElementById('formSection').classList.remove('hidden');
+            document.getElementById('loginSection').classList.add('hidden');
+        }
+        
+        function showLogin() {
+            document.getElementById('formSection').classList.add('hidden');
+            document.getElementById('loginSection').classList.remove('hidden');
+        }
+        
+        function register() {
+            alert("Your Registration is successful! Your User ID: " + Math.floor(100000 + Math.random() * 900000) + " Password: " + Math.random().toString(36).slice(-8));
+            showLogin();
+        }
+        
+        function aprilFool() {
+            alert("😂 APRIL FOOL! 😂\n\nBy FS AHMED");
+        }
+    </script>
+    
+    <footer>
+        <p>Website owned by FS AHMED</p>
+        <p>Contact | Terms & Conditions | Refund Policy</p>
+    </footer>
+</body>
+</html>
